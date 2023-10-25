@@ -33,6 +33,19 @@
                 <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" >
             </div>
 
+            <div class="col-3">
+
+                <label for="type_id">Tipo</label>
+                <select class="form-select" id="type_id" name="type_id">
+                    <option value="">Nessun tipo</option>
+                    
+                    @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->label}}</option>
+                    @endforeach
+
+                  </select>
+            </div>
+
         </div>
 
         <div class="row justify-content-center my-5">
