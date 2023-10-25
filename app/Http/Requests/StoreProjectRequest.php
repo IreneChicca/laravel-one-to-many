@@ -28,6 +28,7 @@ class StoreProjectRequest extends FormRequest
             'date'=> ['required'],
             'main_lang'=> ['required'],
             'commit'=> ['required','integer'],
+            'bonus'=> ['string']
         ];
     }
 
