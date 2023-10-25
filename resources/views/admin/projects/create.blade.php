@@ -30,13 +30,18 @@
 
             <div class="col-6">
                 <label for="title">Titolo</label>
-                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" >
+                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title')}}" >
+                @error('title')
+                <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
             </div>
 
             <div class="col-3">
 
                 <label for="type_id">Tipo</label>
-                <select class="form-select" id="type_id" name="type_id">
+                <select class="form-select" id="type_id" name="type_id" class="form-select @error('type_id') is-invalid @enderror" >
                     <option value="">Nessun tipo</option>
                     
                     @foreach ($types as $type)
@@ -44,6 +49,12 @@
                     @endforeach
 
                   </select>
+                  {{-- non funziona --}}
+                  @error('type_id')
+                  <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+              @enderror
             </div>
 
         </div>
@@ -52,8 +63,12 @@
 
             <div class="col-4">
                 <label for="date">Data</label>
-                <input type="text" id="date" name="date" class="form-control @error('date') is-invalid @enderror" >
-               
+                <input type="text" id="date" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date')}}">
+                @error('date')
+                <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
             </div>
             <div class="col-4">
                 <label for="main_lang">Linguaggio</label>
@@ -70,11 +85,21 @@
         <div class="row justify-content-center my-5">
             <div class="col-2">
                 <label for="commit">Numero di commit</label>
-                <input type="text" id="commit" name="commit" class="form-control @error('commit') is-invalid @enderror" >
+                <input type="text" id="commit" name="commit" class="form-control @error('commit') is-invalid @enderror" value="{{ old('commit')}}">
+                @error('commit')
+                <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
             </div>
             <div class="col-2">
                 <label for="bonus">Bonus</label>
-                <input type="text" id="bonus" name="bonus" class="form-control @error('bonus') is-invalid @enderror" >
+                <input type="text" id="bonus" name="bonus" class="form-control @error('bonus') is-invalid @enderror" value="{{ old('bonus')}}">
+                @error('bonus')
+                <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
             </div>
         </div>
 

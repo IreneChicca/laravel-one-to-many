@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'date'=> ['required'],
             'main_lang'=> ['required'],
             'commit'=> ['required','integer'],
-            'bonus'=> ['string']
+            'bonus'=> ['string'],
+            'type_id'=> ['nullable','string', 'exists:types,id'],
         ];
     }
 
@@ -46,6 +47,10 @@ class StoreProjectRequest extends FormRequest
 
             'commit.required'=> 'Il numero di commit è obbligatorio',
             'commit.integer'=> 'Il numero di commit deve essere un numero',
+
+            'bonus.string'=> 'Il titolo deve essere una stringa',
+
+            'type_id.exists' => 'La categoria non è valida',
 
         ];
 
