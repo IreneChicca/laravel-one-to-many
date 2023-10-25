@@ -28,6 +28,11 @@ Route::middleware(['auth', 'verified'])
 
     Route::get('/', [AdminPageController::class, 'index'])->name('home');
 
+    // Route::get('/test', function(){
+    //   $type = Type::find(1);
+
+    // } );
+
     Route::resource('projects', AdminProjectController::class );
 
   });

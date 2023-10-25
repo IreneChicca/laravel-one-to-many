@@ -12,6 +12,7 @@
     <div class="row my-5">
 
         <p><strong>ID: </strong>{{$project->id}}</p>
+        <p><strong>Tipo: </strong>{{$project->type->label}}</p>
         <p><strong>Data: </strong>{{$project->date}}</p>
         <p><strong>Linguaggio: </strong>{{$project->main_lang}}</p>
         <p><strong>Numero di commit: </strong>{{$project->commit}}</p>
