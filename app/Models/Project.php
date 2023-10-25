@@ -11,4 +11,10 @@ class Project extends Model
 
 
     protected $fillable = ['title','date','main_lang','commit','bonus'];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
+
+
 }
