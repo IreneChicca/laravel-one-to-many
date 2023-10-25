@@ -45,7 +45,7 @@
                     <option value="">Nessun tipo</option>
                     
                     @foreach ($types as $type)
-                    <option value="{{$type->id}}">{{$type->label}}</option>
+                    <option value="{{$type->id}}" @if (old('type_id') == $type->id) selected @endif>{{$type->label}}</option>
                     @endforeach
 
                   </select>
