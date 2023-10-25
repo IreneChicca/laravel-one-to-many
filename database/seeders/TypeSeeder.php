@@ -24,10 +24,10 @@ class TypeSeeder extends Seeder
 
         ];
         
-        foreach ($labels as $type){
+        foreach ($labels as $label){
 
         $type = new Type();
-        $type->label = $type;
+        $type->label = $label;
         $type->color = $faker->hexColor();
 
         $type->save();
